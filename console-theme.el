@@ -1,3 +1,4 @@
+
 ;;; console-theme.el --- Emacs theme that mimics the style of oldschool tty console
 ;;; Commentary:
 ;;; Colors are mostly from the built-in 8-bit palette, with a few variations.
@@ -26,7 +27,6 @@
       (yellow    "#FFFF55")             ; yellow (warning)
       (teal      "#0D7680")             ; ft-green for string
       (teal20    "#B6CCC7")
-      (oxford    "#0F5499")             ; ft-blue
       (sgrey     "#929397")             ; grey used for section header bg
       (select    "#0000FF")             ; ansi blue
       (tgrey     "#E8EAEE")             ; grey for title area bg or popup
@@ -35,8 +35,8 @@
       (rmfg      "#660A29")             ; git added text/fg color: claret40
       (rmbg      "#EBC4C3")             ; git removed bg color
       (cm        "#707070")
+      (frame     "#393939")             ; for mode-line
       (lh        "#0DA59B")
-      (cur       "#363636")
       (hl        "#FFBC5D"))            ; highlight: orange
 
   (custom-theme-set-faces
@@ -44,12 +44,11 @@
    `(default                    ((((type tty)))
                                 (((type graphic)) :background ,black :foreground ,white)))
    ;; Basics
-   `(cursor                      ((t (:background ,strong))))
+   `(cursor                      ((t (:background ,white))))
    `(region                      ((t (:background ,green :foreground ,black :extend nil))))
    `(hl-line                     ((t (:background ,hl))))
    `(fringe                      ((t (:background ,black))))
-   `(show-paren-match            ((t (:background ,orange))))
-   ;; `(show-paren-match            ((t (:background ,orange :box (:line-width (-1 . -1) :style nil)))))
+   `(show-paren-match            ((t (:background ,orange :foreground ,black))))
    `(highlight                   ((t (:background ,green :foreground ,black))))
    `(button                      ((t (:box (:line-width (-1 . -1) :color ,teal)))))
    `(vertical-border             ((t ())))
@@ -90,12 +89,12 @@
    `(font-lock-type-face              ((t ())))
    `(font-lock-variable-name-face     ((t ())))
    `(font-lock-keyword-face           ((t ())))
-   `(font-lock-constant-face          ((t (:foreground "orchid")))) ; violet
+   `(font-lock-constant-face          ((t (:foreground "MediumOrchid")))) ; violet
    `(font-lock-function-name-face     ((t (:foreground ,"DodgerBlue"))))
    `(font-lock-warning-face           ((t (:bold t))))
    `(font-lock-preprocessor-face      ((t (:foreground "#66605C"))))
-   `(font-lock-number-face            ((t (:foreground "orchid"))))
-   `(highlight-numbers-number         ((t (:foreground "orchid"))))
+   `(font-lock-number-face            ((t (:foreground "MediumOrchid"))))
+   `(highlight-numbers-number         ((t (:foreground "MediumOrchid"))))
 
    ;; shell
    `(sh-quoted-exec             ((t ())))
@@ -107,8 +106,8 @@
 
    ;; Mode Line
    `(tab-line                       ((t ())))
-   `(mode-line                      ((t (:background ,black :foreground ,strong))))
-   `(mode-line-inactive             ((t (:background ,padding :foreground ,white))))
+   `(mode-line                      ((t (:background ,padding :foreground ,strong))))
+   `(mode-line-inactive             ((t (:background ,frame :foreground ,white))))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
 
@@ -121,17 +120,17 @@
    `(company-preview-common            ((t (:inherit default))))
    `(company-preview-search            ((t (:inherit default))))
    `(company-tooltip-common            ((t ())))
-   `(company-tooltip-common-selection  ((t (:bold t :foreground ,white))))
-   `(company-tooltip                   ((t (:background ,tgrey))))
+   `(company-tooltip-common-selection  ((t (:bold t :foreground ,black))))
+   `(company-tooltip                   ((t (:background ,padding))))
    `(company-tooltip-search            ((t ())))
-   `(company-tooltip-search-selection  ((t (:background ,padding :foreground ,white))))
-   `(company-tooltip-selection         ((t (:background ,padding :foreground ,white))))
-   `(company-tooltip-mouse             ((t (:background ,padding :foreground ,white))))
-   `(company-tooltip-preview           ((t (:background ,padding :foreground ,white))))
+   `(company-tooltip-search-selection  ((t (:background ,cyan :foreground ,strong))))
+   `(company-tooltip-selection         ((t (:background ,cyan :foreground ,strong))))
+   `(company-tooltip-mouse             ((t (:background ,cyan :foreground ,strong))))
+   `(company-tooltip-preview           ((t (:background ,cyan :foreground ,strong))))
    `(company-tooltip-annotation        ((t ())))
    ;; This nulls the scrollbar in effect
-   `(company-tooltip-scrollbar-track   ((t (:background ,tgrey))))
-   `(company-tooltip-scrollbar-thumb   ((t (:background ,tgrey))))
+   `(company-tooltip-scrollbar-track   ((t (:background ,padding))))
+   `(company-tooltip-scrollbar-thumb   ((t (:background ,padding))))
    `(company-template-field            ((t (:inherit yas-field-highlight-face))))
 
    ;; Cargo
@@ -141,11 +140,11 @@
    `(cargo-process--warning-face       ((t (:foreground "#615440"))))
 
    ;; Vertico & Orderless
-   `(vertico-current         ((t (:background ,teal20))))
-   `(orderless-match-face-0  ((t (:foreground ,green))))
-   `(orderless-match-face-1  ((t (:foreground ,red))))
-   `(orderless-match-face-2  ((t (:foreground ,teal20))))
-   `(orderless-match-face-3  ((t (:foreground ,black))))
+   `(vertico-current         ((t (:background ,green, :foreground ,black))))
+   `(orderless-match-face-0  ((t (:foreground ,yellow))))
+   `(orderless-match-face-1  ((t (:foreground ,orange))))
+   `(orderless-match-face-2  ((t (:foreground ,red))))
+   `(orderless-match-face-3  ((t (:foreground "MediumOrchid"))))
 
    ;; Vundo
    `(vundo-highlight  ((t (:foreground ,hl))))
@@ -156,12 +155,12 @@
    `(meow-insert-indicator          ((t (:bold t))))
    `(meow-normal-indicator          ((t (:bold t))))
    `(meow-motion-indicator          ((t (:bold t))))
-   `(meow-keypad-cursor             ((t (:background ,cur))))
-   `(meow-insert-cursor             ((t (:background ,cur))))
-   `(meow-normal-cursor             ((t (:background ,cur))))
-   `(meow-motion-cursor             ((t (:background ,cur))))
-   `(meow-unknown-cursor            ((t (:background ,cur))))
-   `(meow-beacon-cursor             ((t (:background ,cur))))
+   `(meow-keypad-cursor             ((t (:background ,white))))
+   `(meow-insert-cursor             ((t (:background ,white))))
+   `(meow-normal-cursor             ((t (:background ,white))))
+   `(meow-motion-cursor             ((t (:background ,white))))
+   `(meow-unknown-cursor            ((t (:background ,white))))
+   `(meow-beacon-cursor             ((t (:background ,white))))
 
    ;; Cider
    `(cider-result-overlay-face      ((t (:inverse-video t))))
@@ -171,16 +170,16 @@
 
    ;; Clojure
    `(clojure-character-face       ((t ())))
-   `(clojure-keyword-face         ((t (:foreground "orchid"))))
+   `(clojure-keyword-face         ((t (:foreground "MediumOrchid"))))
 
    ;; Magit
-   `(magit-branch-local                ((t (:foreground "orchid"))))
-   `(magit-branch-remote               ((t (:foreground ,oxford))))
+   `(magit-branch-local                ((t (:foreground "MediumOrchid"))))
+   `(magit-branch-remote               ((t (:foreground "DodgerBlue"))))
    `(magit-header-line                 ((t ())))
    `(magit-head                        ((t ())))
    `(magit-tag                         ((t (:foreground ,cm))))
    `(magit-section-highlight           ((t (:background ,padding))))
-   `(magit-section-heading             ((t (:foreground ,oxford))))
+   `(magit-section-heading             ((t (:foreground "DodgerBlue"))))
    `(magit-section-selection           ((t ())))
    `(magit-diff-removed                ((t (:background ,rmbg :foreground "gray50"))))
    `(magit-diff-removed-highlight      ((t (:background ,rmbg :foreground ,rmfg))))
@@ -278,7 +277,7 @@
    `(flymake-error                  ((t (:underline (:style wave :color ,red)))))
    `(flymake-note                   ((t (:underline (:style wave :color ,cm)))))
 
-   `(wgrep-face                     ((t (:underline "orchid"))))
+   `(wgrep-face                     ((t (:underline "MediumOrchid"))))
 
    `(erc-nick-default-face          ((t (:inherit font-lock-keyword-face))))
    `(erc-input-face                 ((t (:inherit font-lock-function-name-face))))
@@ -290,14 +289,14 @@
    `(tab-bar                        ((t (:background ,white foreground ,black))))
    `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
    `(tab-bar-tab-inactive           ((t ())))
-   `(ansi-color-blue                ((t (:foreground ,oxford))))
+   `(ansi-color-blue                ((t (:foreground "DodgerBlue"))))
    `(ansi-color-bright-blue         ((t (:foreground ,select))))
    `(embark-keybinding              ((t (:inherit font-lock-constant-face))))
 
    ;; which-key
-   `(which-key-command-description-face     ((t :foreground ,oxford)))
-   `(which-key-highlighted-command-face     ((t :foreground ,oxford)))
-   `(which-key-local-map-description-face   ((t :foreground ,oxford)))
+   `(which-key-command-description-face     ((t :foreground "DodgerBlue")))
+   `(which-key-highlighted-command-face     ((t :foreground "DodgerBlue")))
+   `(which-key-local-map-description-face   ((t :foreground "DodgerBlue")))
 
     ;; Treesitter
    `(tree-sitter-hl-face:type       ((t ())))
@@ -324,10 +323,10 @@
    ;;
    `(tree-sitter-hl-face:keyword ((t ())))
    ;;
-   `(tree-sitter-hl-face:function ((t (:foreground ,oxford))))
+   `(tree-sitter-hl-face:function ((t (:foreground "DodgerBlue"))))
    `(tree-sitter-hl-face:function.builtin ((t ())))
    `(tree-sitter-hl-face:function.call ((t ())))
-   `(tree-sitter-hl-face:function.macro ((t (:foreground "orchid"))))
+   `(tree-sitter-hl-face:function.macro ((t (:foreground "MediumOrchid"))))
    `(tree-sitter-hl-face:function.method ((t ())))
    `(tree-sitter-hl-face:function.method.call ((t ())))
    `(tree-sitter-hl-face:function.special ((t ())))
@@ -342,9 +341,9 @@
    ;; dim
    `(tree-sitter-hl-face:label ((t ())))
    `(tree-sitter-hl-face:constant ((t ())))
-   `(tree-sitter-hl-face:constant.builtin ((t (:foreground "orchid"))))
+   `(tree-sitter-hl-face:constant.builtin ((t (:foreground "MediumOrchid"))))
    ;;
-   `(tree-sitter-hl-face:number ((t (:foreground "orchid"))))
+   `(tree-sitter-hl-face:number ((t (:foreground "MediumOrchid"))))
    `(tree-sitter-hl-face:tag ((t ())))
    `(tree-sitter-hl-face:attribute ((t ())))))
 
