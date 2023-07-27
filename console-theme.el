@@ -1,4 +1,3 @@
-
 ;;; console-theme.el --- Emacs theme that mimics the style of oldschool tty console
 ;;; Commentary:
 ;;; Colors are mostly from the built-in 8-bit palette, with a few variations.
@@ -19,9 +18,9 @@
       (white     "#AAAAAA")             ; fg
       (grey      "#555555")             ; gray (dimmer text)
       (strong    "#FFFFFF")             ; for outstanding stuff
-      (green     "#00AA00")             ; green (ok, correct, etc)
-      (cyan      "#00AAAA")             ; cyan (string)
-      (lcyan     "#55FFFF")             ; lighter cyan (doc)
+      (green     "#00AA00")             ; green (string, ok, correct, etc)
+      (cyan      "#00AAAA")             ; cyan (doc)
+      (lcyan     "#55FFFF")             ; lighter cyan
       (orange    "#CC6600")             ; orange (highlight)
       (red       "#BB0000")             ; red (comment)
       (yellow    "#FFFF55")             ; yellow (warning)
@@ -46,7 +45,7 @@
    ;; Basics
    `(cursor                      ((t (:background ,white))))
    `(region                      ((t (:background ,green :foreground ,black :extend nil))))
-   `(hl-line                     ((t (:background ,hl))))
+   `(hl-line                     ((t (:background ,cyan :foreground ,strong))))
    `(fringe                      ((t (:background ,black))))
    `(show-paren-match            ((t (:background ,orange :foreground ,black))))
    `(highlight                   ((t (:background ,green :foreground ,black))))
@@ -82,8 +81,8 @@
    `(font-lock-comment-face           ((t (:foreground ,red))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,red))))
    `(font-lock-delimiter-face         ((t (:foreground "#66605C"))))  ; 70% of black
-   `(font-lock-string-face            ((t (:foreground ,cyan))))
-   `(font-lock-doc-face               ((t (:foreground ,lcyan))))
+   `(font-lock-string-face            ((t (:foreground ,green))))
+   `(font-lock-doc-face               ((t (:foreground ,cyan))))
    `(font-lock-bracket-face           ((t (:foreground "#66605C"))))
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
@@ -294,9 +293,9 @@
    `(embark-keybinding              ((t (:inherit font-lock-constant-face))))
 
    ;; which-key
-   `(which-key-command-description-face     ((t :foreground "DodgerBlue")))
-   `(which-key-highlighted-command-face     ((t :foreground "DodgerBlue")))
-   `(which-key-local-map-description-face   ((t :foreground "DodgerBlue")))
+   `(which-key-command-description-face     ((t :foreground ,cyan)))
+   `(which-key-highlighted-command-face     ((t :foreground ,cyan)))
+   `(which-key-local-map-description-face   ((t :foreground ,cyan)))
 
     ;; Treesitter
    `(tree-sitter-hl-face:type       ((t ())))
@@ -313,10 +312,10 @@
    `(tree-sitter-hl-face:property.definition ((t ())))
    `(tree-sitter-hl-face:comment ((t (:foreground ,red))))
    ;;
-   `(tree-sitter-hl-face:doc ((t (:foreground ,lcyan))))
-   `(tree-sitter-hl-face:string ((t (:foreground ,teal))))
+   `(tree-sitter-hl-face:doc ((t (:foreground ,orange))))
+   `(tree-sitter-hl-face:string ((t (:foreground ,cyan))))
    ;;
-   `(tree-sitter-hl-face:string.special ((t (:foreground ,teal))))
+   `(tree-sitter-hl-face:string.special ((t (:foreground ,lcyan :bold t))))
    ;;
    `(tree-sitter-hl-face:escape ((t ())))
    `(tree-sitter-hl-face:embedded ((t ())))
