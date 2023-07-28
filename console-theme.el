@@ -14,7 +14,8 @@
   "Scales for headers.")
 
 (let ((black     "#000000")             ; bg
-      (padding   "#292929")             ; gray padding
+      (padding   "#292929")             ; bg and gray padding
+      (coal      "#666666")             ; coal-like black for modeline
       (white     "#AAAAAA")             ; fg
       (grey      "#555555")             ; gray (dimmer text)
       (strong    "#FFFFFF")             ; for outstanding stuff
@@ -41,7 +42,7 @@
   (custom-theme-set-faces
    'console
    `(default                    ((((type tty)))
-                                (((type graphic)) :background ,black :foreground ,white)))
+                                (((type graphic)) :background ,padding :foreground ,white)))
    ;; Basics
    `(cursor                      ((t (:background ,white))))
    `(region                      ((t (:background ,green :foreground ,black :extend nil))))
@@ -52,7 +53,7 @@
    `(button                      ((t (:box (:line-width (-1 . -1) :color ,teal)))))
    `(vertical-border             ((t ())))
    `(italic                      ((t (:slant italic :underline nil))))
-   `(line-number-current-line    ((t (:foreground ,black :background ,hl))))
+   `(line-number-current-line    ((t (:foreground ,yellow :background ,orange))))
    `(completions-common-part     ((t (:bold t))))
    `(minibuffer-prompt           ((t ())))
    `(lazy-highlight              ((t (:foreground ,lh :underline t))))
@@ -80,14 +81,14 @@
    ;; Font Locks
    `(font-lock-comment-face           ((t (:foreground ,red))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,red))))
-   `(font-lock-delimiter-face         ((t (:foreground "#66605C"))))  ; 70% of black
+   `(font-lock-delimiter-face         ((t (:foreground ,white))))
    `(font-lock-string-face            ((t (:foreground ,green))))
    `(font-lock-doc-face               ((t (:foreground ,cyan))))
-   `(font-lock-bracket-face           ((t (:foreground "#66605C"))))
+   `(font-lock-bracket-face           ((t (:foreground ,white))))
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
    `(font-lock-variable-name-face     ((t ())))
-   `(font-lock-keyword-face           ((t ())))
+   `(font-lock-keyword-face           ((t (:foreground ,cm))))
    `(font-lock-constant-face          ((t (:foreground "MediumOrchid")))) ; violet
    `(font-lock-function-name-face     ((t (:foreground ,"DodgerBlue"))))
    `(font-lock-warning-face           ((t (:bold t))))
@@ -105,7 +106,7 @@
 
    ;; Mode Line
    `(tab-line                       ((t ())))
-   `(mode-line                      ((t (:background ,padding :foreground ,strong))))
+   `(mode-line                      ((t (:background ,coal :foreground ,strong))))
    `(mode-line-inactive             ((t (:background ,frame :foreground ,white))))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
@@ -320,7 +321,7 @@
    `(tree-sitter-hl-face:escape ((t ())))
    `(tree-sitter-hl-face:embedded ((t ())))
    ;;
-   `(tree-sitter-hl-face:keyword ((t ())))
+   `(tree-sitter-hl-face:keyword ((t (:foreground ,cm))))
    ;;
    `(tree-sitter-hl-face:function ((t (:foreground "DodgerBlue"))))
    `(tree-sitter-hl-face:function.builtin ((t ())))
@@ -334,7 +335,7 @@
    `(tree-sitter-hl-face:method.call ((t ())))
    `(tree-sitter-hl-face:operator ((t ())))
    `(tree-sitter-hl-face:punctuation ((t ())))
-   `(tree-sitter-hl-face:punctuation.bracket ((t (:foreground ,cm))))
+   `(tree-sitter-hl-face:punctuation.bracket ((t (:foreground ,white))))
    `(tree-sitter-hl-face:punctuation.delimiter ((t ())))
    `(tree-sitter-hl-face:punctuation.special ((t ())))
    ;; dim
