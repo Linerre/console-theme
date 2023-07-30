@@ -21,9 +21,13 @@
       (strong    "#FFFFFF")             ; for outstanding stuff
       (green     "#00AA00")             ; green (string, ok, correct, etc)
       (cyan      "#00AAAA")             ; cyan (doc)
+      (magenta   "#C46CDA")             ; constant
       (lcyan     "#55FFFF")             ; lighter cyan
-      (orange    "#CC6600")             ; orange (highlight)
-      (red       "#BB0000")             ; red (comment)
+      (orange    "#E67300")             ; orange (highlight)
+      (blue      "#2994FF")
+      (red       "#DB5050")             ; red (comment)
+      ;; (orange    "#CC6600")             ; orange (highlight)
+      ;; (red       "#BB0000")             ; red (comment)
       (yellow    "#FFFF55")             ; yellow (warning)
       (teal      "#0D7680")             ; ft-green for string
       (teal20    "#B6CCC7")
@@ -34,7 +38,7 @@
       (adbg      "#CCDFC7")             ; git added bg color
       (rmfg      "#660A29")             ; git added text/fg color: claret40
       (rmbg      "#EBC4C3")             ; git removed bg color
-      (cm        "#707070")
+      (cm        "#909090")
       (frame     "#393939")             ; for mode-line
       (lh        "#0DA59B")
       (hl        "#FFBC5D"))            ; highlight: orange
@@ -79,7 +83,7 @@
    `(isearch-group-2                ((t (:background ,select :foreground ,white))))
 
    ;; Font Locks
-   `(font-lock-comment-face           ((t (:foreground "brown"))))
+   `(font-lock-comment-face           ((t (:foreground ,red))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,red))))
    `(font-lock-delimiter-face         ((t (:foreground ,white))))
    `(font-lock-string-face            ((t (:foreground ,green))))
@@ -89,12 +93,12 @@
    `(font-lock-type-face              ((t ())))
    `(font-lock-variable-name-face     ((t ())))
    `(font-lock-keyword-face           ((t (:foreground ,cm))))
-   `(font-lock-constant-face          ((t (:foreground "MediumOrchid")))) ; violet
-   `(font-lock-function-name-face     ((t (:foreground ,"DodgerBlue"))))
+   `(font-lock-constant-face          ((t (:foreground ,magenta))))
+   `(font-lock-function-name-face     ((t (:foreground ,blue))))
    `(font-lock-warning-face           ((t (:bold t))))
    `(font-lock-preprocessor-face      ((t (:foreground "#66605C"))))
-   `(font-lock-number-face            ((t (:foreground "MediumOrchid"))))
-   `(highlight-numbers-number         ((t (:foreground "MediumOrchid"))))
+   `(font-lock-number-face            ((t (:foreground ,magenta))))
+   `(highlight-numbers-number         ((t (:foreground ,magenta))))
 
    ;; shell
    `(sh-quoted-exec             ((t ())))
@@ -144,7 +148,7 @@
    `(orderless-match-face-0  ((t (:foreground ,yellow))))
    `(orderless-match-face-1  ((t (:foreground ,orange))))
    `(orderless-match-face-2  ((t (:foreground ,red))))
-   `(orderless-match-face-3  ((t (:foreground "MediumOrchid"))))
+   `(orderless-match-face-3  ((t (:foreground ,magenta))))
 
    ;; Vundo
    `(vundo-highlight  ((t (:foreground ,hl))))
@@ -170,16 +174,16 @@
 
    ;; Clojure
    `(clojure-character-face       ((t ())))
-   `(clojure-keyword-face         ((t (:foreground "MediumOrchid"))))
+   `(clojure-keyword-face         ((t (:foreground ,magenta))))
 
    ;; Magit
-   `(magit-branch-local                ((t (:foreground "MediumOrchid"))))
-   `(magit-branch-remote               ((t (:foreground "DodgerBlue"))))
+   `(magit-branch-local                ((t (:foreground ,magenta))))
+   `(magit-branch-remote               ((t (:foreground ,blue))))
    `(magit-header-line                 ((t ())))
    `(magit-head                        ((t ())))
    `(magit-tag                         ((t (:foreground ,cm))))
    `(magit-section-highlight           ((t (:background ,padding))))
-   `(magit-section-heading             ((t (:foreground "DodgerBlue"))))
+   `(magit-section-heading             ((t (:foreground ,blue))))
    `(magit-section-selection           ((t ())))
    `(magit-diff-removed                ((t (:background ,rmbg :foreground "gray50"))))
    `(magit-diff-removed-highlight      ((t (:background ,rmbg :foreground ,rmfg))))
@@ -277,7 +281,7 @@
    `(flymake-error                  ((t (:underline (:style wave :color ,red)))))
    `(flymake-note                   ((t (:underline (:style wave :color ,cm)))))
 
-   `(wgrep-face                     ((t (:underline "MediumOrchid"))))
+   `(wgrep-face                     ((t (:underline ,magenta))))
 
    `(erc-nick-default-face          ((t (:inherit font-lock-keyword-face))))
    `(erc-input-face                 ((t (:inherit font-lock-function-name-face))))
@@ -289,7 +293,7 @@
    `(tab-bar                        ((t (:background ,white foreground ,black))))
    `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
    `(tab-bar-tab-inactive           ((t ())))
-   `(ansi-color-blue                ((t (:foreground "DodgerBlue"))))
+   `(ansi-color-blue                ((t (:foreground ,blue))))
    `(ansi-color-bright-blue         ((t (:foreground ,select))))
    `(embark-keybinding              ((t (:inherit font-lock-constant-face))))
 
@@ -311,7 +315,7 @@
    `(tree-sitter-hl-face:variable.special ((t ())))
    `(tree-sitter-hl-face:property ((t ())))
    `(tree-sitter-hl-face:property.definition ((t ())))
-   `(tree-sitter-hl-face:comment ((t (:foreground "brown"))))
+   `(tree-sitter-hl-face:comment ((t (:foreground ,red))))
    ;;
    `(tree-sitter-hl-face:doc ((t (:foreground ,orange))))
    `(tree-sitter-hl-face:string ((t (:foreground ,cyan))))
@@ -323,10 +327,10 @@
    ;;
    `(tree-sitter-hl-face:keyword ((t (:foreground ,cm))))
    ;;
-   `(tree-sitter-hl-face:function ((t (:foreground "DodgerBlue"))))
+   `(tree-sitter-hl-face:function ((t (:foreground ,blue))))
    `(tree-sitter-hl-face:function.builtin ((t ())))
    `(tree-sitter-hl-face:function.call ((t ())))
-   `(tree-sitter-hl-face:function.macro ((t (:foreground "MediumOrchid"))))
+   `(tree-sitter-hl-face:function.macro ((t (:foreground ,magenta))))
    `(tree-sitter-hl-face:function.method ((t ())))
    `(tree-sitter-hl-face:function.method.call ((t ())))
    `(tree-sitter-hl-face:function.special ((t ())))
@@ -341,9 +345,9 @@
    ;; dim
    `(tree-sitter-hl-face:label ((t ())))
    `(tree-sitter-hl-face:constant ((t ())))
-   `(tree-sitter-hl-face:constant.builtin ((t (:foreground "MediumOrchid"))))
+   `(tree-sitter-hl-face:constant.builtin ((t (:foreground ,magenta))))
    ;;
-   `(tree-sitter-hl-face:number ((t (:foreground "MediumOrchid"))))
+   `(tree-sitter-hl-face:number ((t (:foreground ,magenta))))
    `(tree-sitter-hl-face:tag ((t ())))
    `(tree-sitter-hl-face:attribute ((t ())))))
 
