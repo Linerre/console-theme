@@ -53,7 +53,7 @@
    `(button                      ((t (:box (:line-width (-1 . -1) :color ,teal)))))
    `(vertical-border             ((t ())))
    `(italic                      ((t (:slant italic :underline nil))))
-   `(line-number-current-line    ((t (:foreground ,yellow :background ,orange))))
+   `(line-number-current-line    ((t (:foreground ,strong :background ,padding))))
    `(completions-common-part     ((t (:bold t))))
    `(minibuffer-prompt           ((t ())))
    `(lazy-highlight              ((t (:foreground ,lh :underline t))))
@@ -79,7 +79,7 @@
    `(isearch-group-2                ((t (:background ,select :foreground ,white))))
 
    ;; Font Locks
-   `(font-lock-comment-face           ((t (:foreground ,red))))
+   `(font-lock-comment-face           ((t (:foreground "brown"))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,red))))
    `(font-lock-delimiter-face         ((t (:foreground ,white))))
    `(font-lock-string-face            ((t (:foreground ,green))))
@@ -204,7 +204,7 @@
    `(diff-error                     ((t (:foreground ,red))))
 
    `(eshell-prompt                  ((t (:bold t))))
-   `(dired-directory                ((t (:foreground ,lcyan))))
+   `(dired-directory                ((t (:foreground ,cyan))))
 
    ;; Term & Popup
    ;; `(term-color-blue                ((t (:foreground ,blue :background ,blue))))
@@ -311,7 +311,7 @@
    `(tree-sitter-hl-face:variable.special ((t ())))
    `(tree-sitter-hl-face:property ((t ())))
    `(tree-sitter-hl-face:property.definition ((t ())))
-   `(tree-sitter-hl-face:comment ((t (:foreground ,red))))
+   `(tree-sitter-hl-face:comment ((t (:foreground "brown"))))
    ;;
    `(tree-sitter-hl-face:doc ((t (:foreground ,orange))))
    `(tree-sitter-hl-face:string ((t (:foreground ,cyan))))
