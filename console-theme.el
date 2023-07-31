@@ -182,7 +182,7 @@
    `(magit-header-line                 ((t ())))
    `(magit-head                        ((t ())))
    `(magit-tag                         ((t (:foreground ,cm))))
-   `(magit-section-highlight           ((t (:background ,padding))))
+   `(magit-section-highlight           ((t (:background ,frame))))
    `(magit-section-heading             ((t (:foreground ,blue))))
    `(magit-section-selection           ((t ())))
    `(magit-diff-removed                ((t (:background ,rmbg :foreground "gray50"))))
