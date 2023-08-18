@@ -70,24 +70,23 @@
    `(completions-highlight       ((t ())))
    `(warning                     ((t ())))
    `(match                       ((t (:background ,select :foreground ,yellow))))
-   `(secondary-selection         ((t (:background ,teal20 :extend nil))))
+   `(secondary-selection         ((t (:background ,select :extend nil))))
    `(help-key-binding            ((t (:bold t))))
    `(shadow                      ((t (:foreground ,cm))))
    `(error                       ((t (:foreground ,red))))
    `(fill-column-indicator          ((t (:foreground ,cm))))
-   `(scroll-bar                     ((t (:foreground ,black))))
+   `(scroll-bar                     ((t (:foreground ,white))))
    `(parenthesis                    ((t (:foreground ,cm))))
+   `(eldoc-box-body                 ((t (:background ,tgrey :inherit default))))
    ;; `(window-divider                 ((t (:foreground ,cm))))
    ;; `(window-divider-first-pixel     ((t (:foreground ,cm))))
    ;; `(window-divider-last-pixel      ((t (:foreground ,cm))))
    ;; `(line-number                    ((t (:foreground ,cm))))
-
    ;; ISearch
    `(isearch                        ((t (:background ,select :foreground ,yellow))))
    `(isearch-fail                   ((t (:background ,select :foreground ,red))))
    `(isearch-group-1                ((t (:background ,cyan :foreground ,white))))
    `(isearch-group-2                ((t (:background ,select :foreground ,white))))
-
    ;; Font Locks
    `(font-lock-comment-face           ((t (:foreground ,red))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,red))))
@@ -98,64 +97,56 @@
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
    `(font-lock-variable-name-face     ((t ())))
-   `(font-lock-keyword-face           ((t (:foreground ,cm))))
+   `(font-lock-keyword-face           ((t (:foreground ,strong))))
    `(font-lock-constant-face          ((t (:foreground ,magenta))))
    `(font-lock-function-name-face     ((t (:foreground ,blue))))
    `(font-lock-warning-face           ((t (:bold t))))
    `(font-lock-preprocessor-face      ((t (:foreground "#66605C"))))
    `(font-lock-number-face            ((t (:foreground ,magenta))))
    `(highlight-numbers-number         ((t (:foreground ,magenta))))
-
    ;; shell
    `(sh-quoted-exec             ((t ())))
    `(sh-heredoc                 ((t (:foreground ,teal))))
-
    ;; IMenu
    `(imenu-list-entry-face-0          ((t ())))
    `(imenu-list-entry-subalist-face-0 ((t (:bold t))))
-
    ;; Mode Line
    `(tab-line                       ((t ())))
    `(mode-line                      ((t (:background ,coal :foreground ,strong))))
    `(mode-line-inactive             ((t (:background ,frame :foreground ,white))))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
-
    ;; Yasnippet
    `(yas-field-highlight-face       ((t (:background ,teal20 :foreground ,black))))
    `(yascroll:thumb-fringe          ((t (:foreground ,cm :background ,cm))))
    `(yascroll:thumb-text-area       ((t (:foreground ,cm :background ,cm))))
-
    ;; Company
    `(company-preview-common            ((t (:inherit default))))
    `(company-preview-search            ((t (:inherit default))))
    `(company-tooltip-common            ((t ())))
-   `(company-tooltip-common-selection  ((t (:bold t :foreground ,black))))
+   `(company-tooltip-common-selection  ((t (:bold t :foreground ,lcyan))))
    `(company-tooltip                   ((t (:background ,padding))))
    `(company-tooltip-search            ((t ())))
-   `(company-tooltip-search-selection  ((t (:background ,cyan :foreground ,strong))))
-   `(company-tooltip-selection         ((t (:background ,cyan :foreground ,strong))))
-   `(company-tooltip-mouse             ((t (:background ,cyan :foreground ,strong))))
-   `(company-tooltip-preview           ((t (:background ,cyan :foreground ,strong))))
+   `(company-tooltip-search-selection  ((t (:background ,dblue :foreground ,yellow))))
+   `(company-tooltip-selection         ((t (:background ,dblue :foreground ,yellow))))
+   `(company-tooltip-mouse             ((t (:background ,dblue :foreground ,yellow))))
+   `(company-tooltip-preview           ((t (:background ,dblue :foreground ,yellow))))
    `(company-tooltip-annotation        ((t ())))
    ;; This nulls the scrollbar in effect
    `(company-tooltip-scrollbar-track   ((t (:background ,padding))))
    `(company-tooltip-scrollbar-thumb   ((t (:background ,padding))))
    `(company-template-field            ((t (:inherit yas-field-highlight-face))))
-
    ;; Cargo
    `(cargo-process--standard-face      ((t (:inherit default))))
    `(cargo-process--error-face         ((t (:foreground ,red))))
    `(cargo-process--pointer-face       ((t (:foreground ,lcyan))))
    `(cargo-process--warning-face       ((t (:foreground "#615440"))))
-
    ;; Vertico & Orderless
    `(vertico-current         ((t (:background ,dblue, :foreground ,yellow))))
    `(orderless-match-face-0  ((t (:foreground ,lcyan))))
    `(orderless-match-face-1  ((t (:foreground ,lgreen))))
    `(orderless-match-face-2  ((t (:foreground ,strong))))
    `(orderless-match-face-3  ((t (:foreground ,white))))
-
    ;; Vundo
    `(vundo-highlight  ((t (:foreground ,hl))))
 
@@ -165,12 +156,15 @@
    `(meow-insert-indicator          ((t (:bold t))))
    `(meow-normal-indicator          ((t (:bold t))))
    `(meow-motion-indicator          ((t (:bold t))))
+   `(meow-motion-cursor             ((t (:background ,white))))
    `(meow-keypad-cursor             ((t (:background ,white))))
    `(meow-insert-cursor             ((t (:background ,white))))
    `(meow-normal-cursor             ((t (:background ,white))))
-   `(meow-motion-cursor             ((t (:background ,white))))
    `(meow-unknown-cursor            ((t (:background ,white))))
    `(meow-beacon-cursor             ((t (:background ,white))))
+   `(meow-region-cursor-1           ((t (:background ,white))))
+   `(meow-region-cursor-2           ((t (:background ,white))))
+   `(meow-region-cursor-3           ((t (:background ,white))))
 
    ;; Cider
    `(cider-result-overlay-face      ((t (:inverse-video t))))
@@ -243,7 +237,7 @@
    `(marginalia-documentation ((t (:foreground ,white))))
    `(marginalia-file-name ((t (:foreground ,white))))
    `(marginalia-file-owner ((t (:foreground ,white))))
-   `(marginalia-file-priv-dir ((t (:foreground ,white)) ))
+   `(marginalia-file-priv-dir ((t (:foreground ,white))))
    `(marginalia-file-priv-exec ((t (:foreground ,white))))
    `(marginalia-file-priv-link ((t (:foreground ,white))))
    `(marginalia-file-priv-no ((t (:foreground ,white))))
@@ -260,19 +254,19 @@
    `(marginalia-modified ((t (:foreground ,white))))
    `(marginalia-null ((t (:foreground ,white))))
    `(marginalia-number ((t (:foreground ,white))))
-   `(marginalia-off ((t (:foreground ,white))))
-   `(marginalia-on ((t (:foreground ,white))))
-   `(marginalia-size ((t (:foreground ,white))))
-   `(marginalia-string ((t (:foreground ,white))))
-   `(marginalia-symbol ((t (:foreground ,white))))
-   `(marginalia-true ((t (:foreground ,white))))
-   `(marginalia-type ((t (:foreground ,white))))
-   `(marginalia-value ((t (:foreground ,white))))
-   `(marginalia-version ((t (:foreground ,white))))
+   ;; `(marginalia-off ((t (:foreground ,white))))
+   ;; `(marginalia-on ((t (:foreground ,white))))
+   ;; `(marginalia-size ((t (:foreground ,white))))
+   ;; `(marginalia-string ((t (:foreground ,white))))
+   ;; `(marginalia-symbol ((t (:foreground ,white))))
+   ;; `(marginalia-true ((t (:foreground ,white))))
+   ;; `(marginalia-type ((t (:foreground ,white))))
+   ;; `(marginalia-value ((t (:foreground ,white))))
+   ;; `(marginalia-version ((t (:foreground ,white))))
 
    ;; Markdown
    `(markdown-header-face-1             ((t (:bold t :height ,(nth 0 theme-header-scale)))))
-`(markdown-header-face-2             ((t (:bold t :height ,(nth 1 theme-header-scale)))))
+   `(markdown-header-face-2             ((t (:bold t :height ,(nth 1 theme-header-scale)))))
    `(markdown-header-face-3             ((t (:bold t :height ,(nth 2 theme-header-scale)))))
    `(markdown-header-face-4             ((t (:bold t))))
    `(markdown-header-face-5             ((t ())))
@@ -283,20 +277,15 @@
    `(markdown-inline-code-face          ((t (:inherit default :foreground ,red))))
    `(markdown-highlighting-face         ((t (:background ,hl))))
 
-   ;; Telega
-   `(telega-entity-type-code        ((t ())))
-   `(telega-msg-heading             ((t ())))
-   `(telega-msg-self-title          ((t ())))
-   `(telega-unmuted-count           ((t ())))
-
    ;; Org-mode
    `(org-document-title        ((t (:bold t :height ,(nth 0 theme-header-scale)))))
    `(org-document-info         ((t (:foreground ,white))))
+   `(org-meta-line             ((t (:foreground ,white))))
    `(org-link                  ((t (:foreground ,yellow))))
-   `(org-level-1               ((t (:foreground ,strong :bold t))))
-   `(org-level-2               ((t (:foreground ,lcyan :bold t))))
-   `(org-level-3               ((t (:foreground ,cyan :bold t))))
-   `(org-level-4               ((t (:foreground ,green :bold t))))
+   `(org-level-1               ((t (:foreground ,red :bold t))))
+   `(org-level-2               ((t (:foreground ,orange :bold t))))
+   `(org-level-3               ((t (:foreground ,lcyan :bold t))))
+   `(org-level-4               ((t (:foreground ,cyan :bold t))))
    `(org-level-5               ((t ())))
    `(org-level-6               ((t ())))
    `(org-level-7               ((t ())))
@@ -327,10 +316,10 @@
    `(erc-input-face                 ((t (:inherit font-lock-function-name-face))))
    `(erc-timestamp-face             ((t (:inherit font-lock-constant-face))))
    `(erc-notice-face                ((t (:inherit font-lock-comment-face))))
-   `(lsp-modeline-code-actions-face ((t (:foreground ,black))))
+   `(lsp-modeline-code-actions-face ((t (:foreground ,white))))
    `(lsp-modeline-code-actions-preferred-face ((t (:foreground ,teal))))
    ;; tab bar
-   `(tab-bar                        ((t (:background ,white foreground ,black))))
+   `(tab-bar                        ((t (:background ,white foreground ,white))))
    `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
    `(tab-bar-tab-inactive           ((t ())))
    `(ansi-color-blue                ((t (:foreground ,blue))))
