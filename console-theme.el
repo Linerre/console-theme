@@ -74,6 +74,9 @@
    `(help-key-binding            ((t (:bold t))))
    `(shadow                      ((t (:foreground ,cm))))
    `(error                       ((t (:foreground ,red))))
+   `(fill-column-indicator          ((t (:foreground ,cm))))
+   `(scroll-bar                     ((t (:foreground ,black))))
+   `(parenthesis                    ((t (:foreground ,cm))))
    ;; `(window-divider                 ((t (:foreground ,cm))))
    ;; `(window-divider-first-pixel     ((t (:foreground ,cm))))
    ;; `(window-divider-last-pixel      ((t (:foreground ,cm))))
@@ -267,8 +270,8 @@
    `(marginalia-version ((t (:foreground ,white))))
 
    ;; Markdown
-   `(markdown-header-face-1             ((t (:bold t :height ,(nth 0 theme-header-scale))))))
-   `(markdown-header-face-2             ((t (:bold t :height ,(nth 1 theme-header-scale)))))
+   `(markdown-header-face-1             ((t (:bold t :height ,(nth 0 theme-header-scale)))))
+`(markdown-header-face-2             ((t (:bold t :height ,(nth 1 theme-header-scale)))))
    `(markdown-header-face-3             ((t (:bold t :height ,(nth 2 theme-header-scale)))))
    `(markdown-header-face-4             ((t (:bold t))))
    `(markdown-header-face-5             ((t ())))
@@ -287,6 +290,7 @@
 
    ;; Org-mode
    `(org-document-title        ((t (:bold t :height ,(nth 0 theme-header-scale)))))
+   `(org-document-info         ((t (:foreground ,white))))
    `(org-link                  ((t (:foreground ,yellow))))
    `(org-level-1               ((t (:foreground ,strong :bold t))))
    `(org-level-2               ((t (:foreground ,lcyan :bold t))))
@@ -304,11 +308,7 @@
    `(org-block-begin-line      ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
    `(org-block-end-line        ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
 
-   `(fill-column-indicator          ((t (:foreground ,cm))))
-   `(scroll-bar                     ((t (:foreground ,black))))
-   `(parenthesis                    ((t (:foreground ,cm))))
    `(eldoc-box-body                 ((t (:background ,tgrey :inherit default))))
-
    `(flycheck-fringe-warning        ((t (:foreground ,yellow))))
    `(flycheck-warning               ((t (:underline (:style wave :color ,hl)))))
    `(flycheck-info                  ((t (:underline (:style wave :color ,yellow)))))
@@ -318,9 +318,7 @@
    `(flymake-warning                ((t (:underline (:style wave :color ,hl)))))
    `(flymake-error                  ((t (:underline (:style wave :color ,red)))))
    `(flymake-note                   ((t (:underline (:style wave :color ,cm)))))
-
    `(wgrep-face                     ((t (:underline ,magenta))))
-
    `(erc-nick-default-face          ((t (:inherit font-lock-keyword-face))))
    `(erc-input-face                 ((t (:inherit font-lock-function-name-face))))
    `(erc-timestamp-face             ((t (:inherit font-lock-constant-face))))
@@ -338,56 +336,8 @@
    ;; which-key
    `(which-key-command-description-face     ((t :foreground ,cyan)))
    `(which-key-highlighted-command-face     ((t :foreground ,cyan)))
-   `(which-key-local-map-description-face   ((t :foreground ,cyan)))
+   `(which-key-local-map-description-face   ((t :foreground ,cyan)))))
 
-    ;; Treesitter
-   `(tree-sitter-hl-face:type       ((t ())))
-   `(tree-sitter-hl-face:type.parameter ((t ())))
-   `(tree-sitter-hl-face:type.argument ((t ())))
-   `(tree-sitter-hl-face:type.builtin ((t ())))
-   `(tree-sitter-hl-face:type.super ((t ())))
-   `(tree-sitter-hl-face:constructor ((t ())))
-   `(tree-sitter-hl-face:variable ((t ())))
-   `(tree-sitter-hl-face:variable.parameter ((t ())))
-   `(tree-sitter-hl-face:variable.builtin ((t ())))
-   `(tree-sitter-hl-face:variable.special ((t ())))
-   `(tree-sitter-hl-face:property ((t ())))
-   `(tree-sitter-hl-face:property.definition ((t ())))
-   `(tree-sitter-hl-face:comment ((t (:foreground ,red))))
-   ;;
-   `(tree-sitter-hl-face:doc ((t (:foreground ,orange))))
-   `(tree-sitter-hl-face:string ((t (:foreground ,cyan))))
-   ;;
-   `(tree-sitter-hl-face:string.special ((t (:foreground ,lcyan :bold t))))
-   ;;
-   `(tree-sitter-hl-face:escape ((t ())))
-   `(tree-sitter-hl-face:embedded ((t ())))
-   ;;
-   `(tree-sitter-hl-face:keyword ((t (:foreground ,cm))))
-   ;;
-   `(tree-sitter-hl-face:function ((t (:foreground ,blue))))
-   `(tree-sitter-hl-face:function.builtin ((t ())))
-   `(tree-sitter-hl-face:function.call ((t ())))
-   `(tree-sitter-hl-face:function.macro ((t (:foreground ,magenta))))
-   `(tree-sitter-hl-face:function.method ((t ())))
-   `(tree-sitter-hl-face:function.method.call ((t ())))
-   `(tree-sitter-hl-face:function.special ((t ())))
-
-   `(tree-sitter-hl-face:method ((t ())))
-   `(tree-sitter-hl-face:method.call ((t ())))
-   `(tree-sitter-hl-face:operator ((t ())))
-   `(tree-sitter-hl-face:punctuation ((t ())))
-   `(tree-sitter-hl-face:punctuation.bracket ((t (:foreground ,white))))
-   `(tree-sitter-hl-face:punctuation.delimiter ((t ())))
-   `(tree-sitter-hl-face:punctuation.special ((t ())))
-   ;; dim
-   `(tree-sitter-hl-face:label ((t ())))
-   `(tree-sitter-hl-face:constant ((t ())))
-   `(tree-sitter-hl-face:constant.builtin ((t (:foreground ,magenta))))
-   ;;
-   `(tree-sitter-hl-face:number ((t (:foreground ,magenta))))
-   `(tree-sitter-hl-face:tag ((t ())))
-   `(tree-sitter-hl-face:attribute ((t ())))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
