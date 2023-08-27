@@ -277,6 +277,13 @@
    `(markdown-inline-code-face          ((t (:inherit default :foreground ,red))))
    `(markdown-highlighting-face         ((t (:background ,hl))))
 
+   ;; Latex
+   `(font-latex-sectioning-1-face   ((t (:foreground ,strong))))
+   `(font-latex-sectioning-2-face   ((t (:foreground ,orange))))
+   `(font-latex-sectioning-3-face   ((t (:foreground ,lcyan))))
+   `(font-latex-sectioning-4-face   ((t (:foreground ,cyan))))
+   `(font-latex-sectioning-5-face   ((t (:foreground ,white))))
+
    ;; Org-mode
    `(org-document-title        ((t (:bold t :height ,(nth 0 theme-header-scale)))))
    `(org-document-info         ((t (:foreground ,white))))
@@ -325,6 +332,9 @@
    `(ansi-color-blue                ((t (:foreground ,blue))))
    `(ansi-color-bright-blue         ((t (:foreground ,select))))
    `(embark-keybinding              ((t (:inherit font-lock-constant-face))))
+
+   ;; TeX
+   `(TeX-error-description-tex-said ((t (:foreground ,orange))))
 
    ;; which-key
    `(which-key-command-description-face     ((t :foreground ,cyan)))
