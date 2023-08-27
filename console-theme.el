@@ -204,6 +204,7 @@
    ;; `(magit-reflog-remote               ((t (:foreground ,oxford70))))
 
    ;; SMerge
+   `(smerge-markers                 ((t (:foreground ,white :background ,frame :extend t))))
    ;; `(smerge-refined-added           ((t (:background "#253325"))))
    ;; `(smerge-lower                   ((t (:background "#173017"))))
    ;;
@@ -299,14 +300,17 @@
    `(org-level-5               ((t ())))
    `(org-level-6               ((t ())))
    `(org-level-7               ((t ())))
+   `(org-headline-done         ((t ())))
    `(org-drawer                ((t (:foreground ,orange))))
-   `(org-todo                  ((t (:foreground ,red :bold t))))
-   `(org-code                  ((t (:background "blue" :foreground ,lcyan))))
+   `(org-warning               ((t (:foreground ,red :bold t))))
+   `(org-done                  ((t (:foreground ,green :bold t))))
+   `(org-code                  ((t (:background ,dblue :foreground ,lcyan))))
+   `(org-verbatim              ((t (:background ,dblue :foreground ,yellow))))
    `(org-block                 ((t ())))
    `(org-quote                 ((t (:extend t))))
    `(org-verse                 ((t (:extend t))))
-   `(org-block-begin-line      ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
-   `(org-block-end-line        ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
+   `(org-block-begin-line      ((t (:foreground ,white :background ,frame :family "Monospace" :font "Monospace" :bold t :extend t))))
+   `(org-block-end-line        ((t (:foreground ,white :background ,frame :family "Monospace" :font "Monospace" :bold t :extend t))))
 
    `(eldoc-box-body                 ((t (:background ,tgrey :inherit default))))
    `(flycheck-fringe-warning        ((t (:foreground ,yellow))))
