@@ -283,6 +283,8 @@
    `(font-latex-sectioning-3-face   ((t (:foreground ,lcyan))))
    `(font-latex-sectioning-4-face   ((t (:foreground ,cyan))))
    `(font-latex-sectioning-5-face   ((t (:foreground ,white))))
+   ;; TeX
+   `(TeX-error-description-tex-said ((t (:foreground ,orange))))
 
    ;; Org-mode
    `(org-document-title        ((t (:bold t :height ,(nth 0 theme-header-scale)))))
@@ -331,15 +333,7 @@
    `(tab-bar-tab-inactive           ((t ())))
    `(ansi-color-blue                ((t (:foreground ,blue))))
    `(ansi-color-bright-blue         ((t (:foreground ,select))))
-   `(embark-keybinding              ((t (:inherit font-lock-constant-face))))
-
-   ;; TeX
-   `(TeX-error-description-tex-said ((t (:foreground ,orange))))
-
-   ;; which-key
-   `(which-key-command-description-face     ((t :foreground ,cyan)))
-   `(which-key-highlighted-command-face     ((t :foreground ,cyan)))
-   `(which-key-local-map-description-face   ((t :foreground ,cyan)))))
+   `(embark-keybinding              ((t (:inherit font-lock-constant-face))))))
 
 
 (and load-file-name
