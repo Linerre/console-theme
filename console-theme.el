@@ -283,6 +283,8 @@
    `(font-latex-sectioning-3-face   ((t (:foreground ,lcyan))))
    `(font-latex-sectioning-4-face   ((t (:foreground ,cyan))))
    `(font-latex-sectioning-5-face   ((t (:foreground ,white))))
+   `(font-latex-string-face         ((t (:inherit font-lock-string-face))))
+
    ;; TeX
    `(TeX-error-description-tex-said ((t (:foreground ,orange))))
 
